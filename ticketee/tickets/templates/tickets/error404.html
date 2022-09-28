@@ -1,0 +1,17 @@
+{% extends 'tickets/layout.html' %}
+{% load static %}
+{% block main %}
+<main class="page">
+    <div class="page__container _container">
+        <section class="page__welcome welcome">
+            <div class="welcome__info">
+                <h1 class="welcome__heading">УПС!</h1>
+                <p class="welcome__text welcome__text--notfound">Страница не найдена</p>
+                <p class="welcome__text welcome__text--error">ERROR 404</p>
+            </div>
+            <div class="welcome__button"><a href="{% url 'home' %}" class="welcome__link">На главную</a></div>
+            <img class="welcome__image"src="{% static 'tickets/img/404.png' %}" alt="error404">
+        </section>
+    </div>
+</main>
+{% endblock %}

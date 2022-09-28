@@ -1,0 +1,44 @@
+{% extends 'tickets/layout.html' %}
+{% load tickets_tags %}
+{% load static %}
+{% block main %}
+<main class="page">
+    <div class="page__container _container">
+        <section id="events" class="page__events">
+            <h2 class="page__events-heading">События</h2>
+            {% getcats as cats %}
+            <div class="categories">
+                <select title="categories" class="categories__select" id="">
+                    {% if cat_selected == 0 %}
+                        <option>Все категории</option>
+                    {% else %}
+                        <option value="{% url 'home' %}">Все категории</option>
+                    {% endif %}
+                    {% for c in cats %}
+                        {% if c.pk == cat_selected %}
+                            <option selected="true" value="#">{{c.name}}</option>
+                        {% else %}
+                            <option value="{{ c.get_absolute_url }}">{{c.name}}</option>
+                        {% endif %}
+                    {% endfor%}
+                </select>
+            </div>
+            {% for event in events %}
+                <div class="event">
+                    <img src="{{event.photo.url}}" alt="Событие" class="event__photo">
+                    <div class="event__info">
+                        <h3 class="event__heading">{{event.name}}</h3>
+                        <a href="{{event.category.get_absolute_url}}" class="event__category">{{event.category}}</a>
+                        <p class="event__description">{{event.description|truncatewords:70}}</p>
+                        {% if event.available %}
+                            <a href="{% url 'event' event.pk %}" class="event__button button">Купить билет</a>
+                        {% else %}
+                            <a class="event__button button event__button--disabled">Купить билет</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+</main>
+{% endblock %}
