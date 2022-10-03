@@ -6,7 +6,7 @@
     <div class="page__container _container">
         <section id="events" class="page__events">
             <h2 class="page__events-heading">События</h2>
-            {% getcats as cats %}
+            {% get_cats as cats %}
             <div class="categories">
                 <select title="categories" class="categories__select" id="">
                     {% if cat_selected == 0 %}
@@ -23,21 +23,7 @@
                     {% endfor%}
                 </select>
             </div>
-            {% for event in events %}
-                <div class="event">
-                    <img src="{{event.photo.url}}" alt="Событие" class="event__photo">
-                    <div class="event__info">
-                        <h3 class="event__heading">{{event.name}}</h3>
-                        <a href="{{event.category.get_absolute_url}}" class="event__category">{{event.category}}</a>
-                        <p class="event__description">{{event.description|truncatewords:70}}</p>
-                        {% if event.available %}
-                            <a href="{% url 'event' event.pk %}" class="event__button button">Купить билет</a>
-                        {% else %}
-                            <a class="event__button button event__button--disabled">Купить билет</a>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endfor %}
+            {% show_events %}
         </section>
     </div>
 </main>

@@ -1,3 +1,5 @@
+from enum import unique
+from unittest.util import _MAX_LENGTH
 from django.urls import reverse
 from tabnanny import verbose
 from tkinter import CASCADE
@@ -5,6 +7,7 @@ from django.db import models
 
 class Event(models.Model):
     name = models.CharField('Название', max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
     description = models.TextField('Описание')
     date = models.DateField('Дата')
     time = models.TimeField('Время')
@@ -19,7 +22,7 @@ class Event(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse("event", kwargs={"event_id": self.pk})
+        return reverse('event', kwargs={'event_id': self.id, 'cat_id': self.category_id})
     
     
     class Meta:
@@ -29,12 +32,13 @@ class Event(models.Model):
         
 class Category(models.Model):
     name = models.CharField("Название", max_length=255, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True, verbose_name="URL", db_index=True)
     
     def __str__(self):
         return self.name
     
     def get_absolute_url(self):
-        return reverse("category", kwargs={"cat_id": self.pk})
+        return reverse('category', kwargs={'cat_id': self.id})
     
     class Meta:
         verbose_name = 'Категория'
