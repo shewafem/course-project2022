@@ -9,9 +9,8 @@ def home(request):
     events = Event.objects.all()
     
     context = {
-        'events': events,
         'title' : 'Ticketee — продажа билетов',
-        'cat_selected' : 0,
+        'cat_selected' : "",
     }
     
     return render(request, 'tickets/home.html', context = context)
@@ -19,21 +18,16 @@ def home(request):
 def about(request):
     return render(request, 'tickets/about.html', {'title': 'О нас | Ticketee'})
 
-def show_event(request, event_id, cat_id):
-    event = get_object_or_404(Event, id=event_id)
+def show_event(request, event_slug, cat_slug):
+    event = get_object_or_404(Event, slug=event_slug)
     
-    return render(request, 'tickets/event.html', {'event': event, 'title': event.name, 'cat_selected': cat_id})
+    return render(request, 'tickets/event.html', {'event': event, 'title': event.name, 'cat_selected': cat_slug})
 
-def show_events_by_category(request, cat_id):
-    events_by_cats = Event.objects.filter(category_id=cat_id)
-    
-    if len(events_by_cats) == 0:
-        raise Http404()
-    
+def show_events_by_category(request, cat_slug):
+    category = get_object_or_404(Category, slug = cat_slug)
     context = {
-        'events': events_by_cats,
-        'title' : 'Ticketee — продажа билетов',
-        'cat_selected' : cat_id,
+        'title' : f'Ticketee — продажа билетов | {category.name}',
+        'cat_selected' : cat_slug,
     }
     
     return render(request, 'tickets/events_by_category.html', context=context)

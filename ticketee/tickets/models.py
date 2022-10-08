@@ -1,5 +1,6 @@
 from enum import unique
 from unittest.util import _MAX_LENGTH
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from tabnanny import verbose
 from tkinter import CASCADE
@@ -22,7 +23,8 @@ class Event(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('event', kwargs={'event_id': self.id, 'cat_id': self.category_id})
+        category = get_object_or_404(Category, id = self.category_id)
+        return reverse('event', kwargs={'event_slug': self.slug, 'cat_slug': category.slug})
     
     
     class Meta:
@@ -38,7 +40,7 @@ class Category(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('category', kwargs={'cat_id': self.id})
+        return reverse('category', kwargs={'cat_slug': self.slug})
     
     class Meta:
         verbose_name = 'Категория'

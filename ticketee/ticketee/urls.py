@@ -26,8 +26,8 @@ urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('about/', about, name='about'),
-    path('category/<int:cat_id>/<int:event_id>/', show_event, name='event'),
-    path('category/<int:cat_id>/', show_events_by_category, name='category')
+    path('events/<slug:cat_slug>/<slug:event_slug>/', show_event, name='event'),
+    path('events/<slug:cat_slug>/', show_events_by_category, name='category')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #handler404 = pageNotFound
