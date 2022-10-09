@@ -1,0 +1,25 @@
+{% extends 'tickets/layout.html' %}
+{% load static %}
+{% load tickets_tags %}
+{% block main %}
+<main class="page">
+    <div class="page__container _container">
+        <section class="form-section">
+            <form class="page__form form" action="" method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>Вход</legend>
+                        <div>
+                            <input type="text" name="login" value="" placeholder="Логин">
+                        </div>
+                        <div>
+                            <input type="password" name="password" value="" placeholder="Пароль">
+                        </div>
+                </fieldset>
+                <button class="button" type="submit">Войти</button>
+            </form>
+            <img class="form__img" src="{% static 'tickets/img/laptop.png' %}" alt="happy-laptop">
+        </section>
+    </div>
+</main>
+{% endblock %}
