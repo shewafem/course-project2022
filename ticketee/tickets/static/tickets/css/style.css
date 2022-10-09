@@ -451,6 +451,13 @@ footer {
     margin-left: auto;
 }
 
+.event__button--disabled {
+    background: rgb(188, 182, 188);
+    color: black;
+    font-weight: 900;
+}
+
+
 /*event-details*/
 
 .page__event-details {
@@ -545,6 +552,12 @@ footer {
     bottom: -90px;
 }
 
+.event-details__button--disabled {
+    background: rgb(188, 182, 188);
+    color: black;
+    font-weight: 900;
+}
+
 .event-details__date:before {
     content: '';
     background-image: url('../img/icons/calendar.svg');
@@ -602,4 +615,79 @@ select option {
     font-family: inherit;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.page__form {
+    width: 710px;
+    min-height: 501px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    /* shadow */
+    box-shadow: 10px 10px 0px #000000;
+    border-radius: 10px;
+    position: relative;
+    left: 50px;
+}
+
+.page__form fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+}
+
+.page__form legend{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    text-align: center;
+    color: #000000;
+    padding-top: 37px;
+}
+
+.page__form input {
+    width: 100%;
+    height: 85px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    /* shadow-mild */
+    box-shadow: 5px 5px 0px #000000;
+    border-radius: 10px;
+    font-size: 32px;
+    line-height: 41px;
+    text-align: justify;
+}
+
+.page__form input {
+    padding: 22px 37px;
+    margin-bottom: 64px;
+}
+
+.page__form button {
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    /* shadow-mild */
+    box-shadow: 5px 5px 0px #000000;
+    border-radius: 10px;
+    padding: 40px 100px;
+    
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 52px;
+/* identical to box height */
+    text-align: center;
+    color: #000000;
+    position: absolute;
+    left: 740px;
+    bottom: 25px;
+    z-index: 101;
+}
+.form__img {
+    z-index: 100;
+    position: relative;
+}
+.form-section {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 104px;
 }

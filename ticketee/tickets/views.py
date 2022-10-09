@@ -32,5 +32,8 @@ def show_events_by_category(request, cat_slug):
     
     return render(request, 'tickets/events_by_category.html', context=context)
 
+def auth(request):
+    return render(request, 'tickets/auth.html')
+
 def pageNotFound(request, exception):
     return render(exception, 'tickets/error404.html', {'title': 'Страница не найдена'})
