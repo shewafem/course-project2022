@@ -1,19 +1,24 @@
 from http.client import HTTPResponse
+from django.views.generic import ListView
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 
 
 from .models import *
 
-def home(request):
-    events = Event.objects.all()
+class EventHome(ListView):
+    model = Event
+    template_name = 'tickets/home.html'
     
-    context = {
-        'title' : 'Ticketee — продажа билетов',
-        'cat_selected' : "",
-    }
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Ticketee — продажа билетов'
+        context['cat_selected'] = ""
+        
+        return context
     
-    return render(request, 'tickets/home.html', context = context)
+def events(request):
+    return render(request, 'tickets/events.html')
 
 def about(request):
     return render(request, 'tickets/about.html', {'title': 'О нас | Ticketee'})
@@ -37,3 +42,4 @@ def auth(request):
 
 def pageNotFound(request, exception):
     return render(exception, 'tickets/error404.html', {'title': 'Страница не найдена'})
+

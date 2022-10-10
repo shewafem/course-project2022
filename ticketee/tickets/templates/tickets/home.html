@@ -9,24 +9,10 @@
                 <h1 class="welcome__heading">Билеты на лучшие события Москвы! 😊</h1>
                 <p class="welcome__text">Все ваши потребности в развлечениях под одной виртуальной крышей с билетами в театр, концерты, спорт, семейные мероприятия, клубы и многое другое. Быстрее бронируйте билет, пока это не сделал кто-то другой!</p>
             </div>
-            <div class="welcome__button button"><a href="#events" class="welcome__link">Купить билеты!</a></div>
+            <div class="welcome__button button"><a href="{% url 'events' %}" class="welcome__link">Купить билеты!</a></div>
             <img class="welcome__image" src="{% static 'tickets/img/star.png' %}" alt="exciting-star">
         </section>
-        <section id="events" class="page__events">
-            <h2 class="page__events-heading">События</h2>
-            {% get_cats as cats %}
-            <div class="categories">
-                <select title="categories" class="categories__select" id="">
-                    {% if cat_selected == 0 %}
-                        <option>Все категории</option>
-                    {% else %}
-                        <option value="{% url 'home' %}">Все категории</option>
-                    {% endif %}
-                    {% show_cats %}
-                </select>
-            </div>
-            {% show_events %}
-        </section>
+        {% comment %} there will be some code in the future... {% endcomment %}
     </div>
 </main>
 {% endblock %}
