@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.db import models
 
@@ -23,8 +22,15 @@ class Event(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        cat = Category.objects.get(id=self.category_id)
-        return reverse('event', kwargs={'event_slug': self.slug, 'cat_slug': cat.slug})
+        return reverse('event', kwargs={'event_slug': self.slug, 'cat_slug': self.category.slug})
+    
+    @property
+    def photoURL(self):
+        try:
+            url = self.photo.url
+        except:
+            url = ''
+        return url
     
     class Meta:
         verbose_name= 'Событие'

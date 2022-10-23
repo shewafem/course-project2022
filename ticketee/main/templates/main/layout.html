@@ -20,7 +20,7 @@
                         <li class="nav__item"><a href="{% url 'events' %}" class="nav__link">События</a></li>
                         <li class="nav__item"><a href="{% url 'about' %}" class="nav__link">О нас</a></li>
                         {% if user.is_authenticated %}
-                            <li class="nav__item"><a href="#" class="nav__link">Мои билеты</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Мои билеты 🏷️</a></li>
                             <li class="nav__item"><a href="{% url 'logout' %}" class="nav__link">Выйти | {{user.username}}</a></li>
                         {% else %}
                             <li class="nav__item"><a href="{% url 'login' %}" class="nav__link">Войти</a></li>
