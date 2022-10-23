@@ -25,12 +25,10 @@ def show_categories():
 @register.inclusion_tag('tickets/list_events.html', name="show_events")
 def show_events(cat_selected=""):
     if cat_selected:
-        category = get_object_or_404(Category, slug=cat_selected)
-        events_by_cat = Event.objects.filter(category_id=category.id)
+        events_by_cat = Event.objects.filter(category__slug=cat_selected)
         if len(events_by_cat) == 0:
             raise Http404()
         return {'events': events_by_cat}
     else:
         events = Event.objects.all()
         return {'events': events}
-    

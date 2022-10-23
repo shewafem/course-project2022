@@ -122,6 +122,10 @@ a {
 
 /*--------------------*/
 
+::placeholder {
+    opacity: 0.5;
+}
+
 .wrapper {
     min-height: 100%;
     overflow: hidden;
@@ -185,6 +189,7 @@ header {
 }
 
 /* main */
+
 .page__welcome {
     position: relative;
     margin-top: 150px;
@@ -270,6 +275,7 @@ header {
 .page__about {
     position: relative;
     margin-top: 150px;
+    margin-bottom: 100px;
 }
 
 .page__about .welcome__info {
@@ -303,7 +309,7 @@ header {
 /*footer*/
 
 footer {
-    margin-top: 200px;
+    margin-top: 100px;
     height: 309px;
     padding-top: 31px;
     position: relative;
@@ -618,20 +624,18 @@ select option {
 
 .page__form {
     width: 710px;
-    min-height: 501px;
+    height: 100%;
     background: #FFFFFF;
     border: 2px solid #000000;
     /* shadow */
     box-shadow: 10px 10px 0px #000000;
     border-radius: 10px;
-    position: relative;
-    left: 50px;
 }
 
 .page__form fieldset {
     display: flex;
     flex-direction: column;
-    padding: 60px;
+    padding: 60px 60px 30px 60px;
 }
 
 .page__form legend{
@@ -641,24 +645,49 @@ select option {
     text-align: center;
     color: #000000;
     padding-top: 37px;
+    margin-bottom: -30px;
+}
+
+.page__form label {
+    font-size: 20px;
 }
 
 .page__form input {
     width: 100%;
-    height: 85px;
+    height: 70px;
     background: #FFFFFF;
     border: 2px solid #000000;
     /* shadow-mild */
     box-shadow: 5px 5px 0px #000000;
     border-radius: 10px;
     font-size: 32px;
-    line-height: 41px;
     text-align: justify;
+    padding: 22px 37px;
+    margin-top: 10px;
 }
 
-.page__form input {
-    padding: 22px 37px;
-    margin-bottom: 64px;
+.page__form input:invalid {
+    border: 2px solid rgba(255, 0, 0, 0.58);
+    box-shadow: 5px 5px 0px rgba(255, 0, 0, 0.58);
+}
+
+.page__form input:valid {
+    border: 2px solid rgba(0, 255, 13, 0.58);
+    box-shadow: 5px 5px 0px rgba(0, 255, 13, 0.58);
+}
+
+.page__form input:focus {
+    background: rgba(148, 90, 241, 0.2);
+}
+
+.page__form div:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.form__error {
+    color:rgba(255, 0, 0, 0.58);
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .page__form button {
@@ -667,26 +696,38 @@ select option {
     /* shadow-mild */
     box-shadow: 5px 5px 0px #000000;
     border-radius: 10px;
-    padding: 40px 100px;
-    
+    padding: 10px 100px;
     font-weight: 500;
-    font-size: 40px;
-    line-height: 52px;
+    font-size: 32px;
 /* identical to box height */
     text-align: center;
     color: #000000;
-    position: absolute;
-    left: 740px;
-    bottom: 25px;
-    z-index: 101;
 }
+
 .form__img {
     z-index: 100;
     position: relative;
+    height: 600px;
+    bottom: 25px;
+    left: 5px;
 }
 .form-section {
     display: flex;
     margin: 0 auto;
     justify-content: center;
-    margin-top: 104px;
+    margin-top: 70px;
+}
+
+.form__register {
+    font-size: 32px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.form__register:hover{
+    text-shadow: 2px 2px 1px #8844f6;
+    text-decoration: underline;
 }

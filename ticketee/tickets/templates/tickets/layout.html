@@ -17,10 +17,15 @@
                 <a href="{% url 'home' %}"><img class="header__logo" src="{% static 'tickets/img/logo.svg' %}" alt="logo"></a>
                 <nav class="header__nav nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="tel:+79503858079" class="nav__link"><img width="25px" class="menu__icon" src="{% static 'tickets/img/icons/phone.svg' %}" alt="phone">(505) 503-4455</a></li>
+                        {% comment %}<li class="nav__item"><a href="tel:+79503858079" class="nav__link"><img width="25px" class="menu__icon" src="{% static 'tickets/img/icons/phone.svg' %}" alt="phone">(505) 503-4455</a></li>{% endcomment %}
                         <li class="nav__item"><a href="{% url 'events' %}" class="nav__link">События</a></li>
                         <li class="nav__item"><a href="{% url 'about' %}" class="nav__link">О нас</a></li>
-                        <li class="nav__item"><a href="{% url 'auth' %}" class="nav__link">Войти</a></li>
+                        {% if user.is_authenticated %}
+                            <li class="nav__item"><a href="#" class="nav__link">Мои билеты</a></li>
+                            <li class="nav__item"><a href="{% url 'logout' %}" class="nav__link">Выйти | {{user.username}}</a></li>
+                        {% else %}
+                            <li class="nav__item"><a href="{% url 'login' %}" class="nav__link">Войти</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
@@ -44,7 +49,7 @@
                     <div class="menu__wrapper">
                         <h3 class="menu__heading">Услуги</h3>
                         <ul class="menu__list">
-                            <li class="menu__item"><a href="#" class="menu__link">Купить билеты</a></li>
+                            <li class="menu__item"><a href="{% url 'events' %}" class="menu__link">Купить билеты</a></li>
                         </ul>
                     </div>
                     <div class="menu__wrapper">

@@ -1,9 +1,5 @@
-from enum import unique
-from unittest.util import _MAX_LENGTH
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from tabnanny import verbose
-from tkinter import CASCADE
 from django.db import models
 
 class Event(models.Model):
@@ -26,11 +22,10 @@ class Event(models.Model):
         category = get_object_or_404(Category, id = self.category_id)
         return reverse('event', kwargs={'event_slug': self.slug, 'cat_slug': category.slug})
     
-    
     class Meta:
         verbose_name= 'Событие'
         verbose_name_plural = 'События'
-        ordering = ['id']
+        ordering = ['date']
         
 class Category(models.Model):
     name = models.CharField("Название", max_length=255, db_index=True)

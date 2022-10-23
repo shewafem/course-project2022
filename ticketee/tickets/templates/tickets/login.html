@@ -1,0 +1,29 @@
+{% extends 'tickets/layout.html' %}
+{% load static %}
+{% load tickets_tags %}
+{% block main %}
+<main class="page">
+    <div class="page__container _container">
+        <section class="form-section">
+            <form class="page__form form" action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>Вход</legend>
+                        <div>
+                            <label>Имя пользователя:<input type="text" name="username" value="" placeholder="ticketee" required></label>
+                        </div>
+                        <div>
+                            <label>Пароль:<input type="password" name="password" value="" placeholder="Пароль" required></label>
+                        </div>
+                        {% for error in login_form.non_field_errors %}
+                            <div><p class="form__error">{{error}}</p></div>
+                        {% endfor %}
+                        <button class="auth-button button" type="submit">Войти</button>
+                        <a href="{% url 'register' %}" class="form__register">или зарегистрироваться...</a>
+                </fieldset>
+            </form>
+            {% comment %}<img class="form__img" src="{% static 'tickets/img/laptop.png' %}" alt="happy-laptop">{% endcomment %}
+        </section>
+    </div>
+</main>
+{% endblock %}
