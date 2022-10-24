@@ -15,3 +15,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(OrderItem)
+admin.site.register(Order)
+admin.site.register(Customer)

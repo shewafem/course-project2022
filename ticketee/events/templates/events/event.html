@@ -15,8 +15,13 @@
                     <p class="event-details__time details"><span class="accent">Время:</span> {{event.time}}</p>
                 </div>
                 <p class="event-details__price">Цена: {{event.price}} руб.</p>
-                {% if event.quantity %}
-                    <a href="{{event.get_absolute_url}}" class="event-details__button button">Купить билет 🏷️</a>
+                {% if event.is_available %}
+                    {% comment %}<a href="{{event.get_absolute_url}}" class="event-details__button button">Купить билет 🏷️</a>{% endcomment %}
+                    <form class="event-details__form" method="POST" action="{% url 'add-to-my-events' event.slug %}">
+                        {% csrf_token %}
+                        <input class="event-details__input" min="1" value=1 type="number" name="quantity">
+                        <button class="event-details__button button" type="submit"> Купить билет 🏷️
+                    </form>
                 {% else %}
                     <a class="event-details__button event-details__button--disabled">SOLD OUT 😔</a>
                 {% endif %}

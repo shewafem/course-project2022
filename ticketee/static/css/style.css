@@ -263,8 +263,8 @@ header {
 
 .welcome__image {
     position: absolute;
-    width: 579px;
-    height: 579px;
+    width: 500px;
+    height: 500x;
     left: 800px;
     top: -78px;
 }
@@ -520,6 +520,25 @@ footer {
     margin-bottom: 50px;
 }
 
+.event-details__form {
+    margin-left: auto;
+    max-width: 100px;
+}
+
+
+.event-details__input {
+    width: 100%;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 0px #000000;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-left: auto;
+    line-height: 50px;
+    font-size: 32px;
+    position: relative;
+    bottom: 65px;
+}
 .accent {
     font-weight: 700;
 }
@@ -730,4 +749,50 @@ select option {
 .form__register:hover{
     text-shadow: 2px 2px 1px #8844f6;
     text-decoration: underline;
+}
+
+.my-events__text-wrapper {
+    margin-left: auto;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    /* shadow-mild */
+    box-shadow: 5px 5px 0px #000000;
+    border-radius: 10px;
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.my-events__text {
+    font-size: 30px;
+}
+
+.my-events__accent {
+    text-align: justify;
+    text-shadow: 2px 2px #8844F6;
+    font-weight: 600;
+}
+
+.event__button--danger {
+    background: rgba(255, 0, 0, 0.58);
+}
+
+.event__button--danger:hover {
+    background: rgb(255, 0, 0)
+}
+
+.event__button--pay {
+    background: rgba(0, 255, 13, 0.58);
+}
+.event__button--pay:hover {
+    background: rgb(12, 184, 0);
+}
+
+.my-events__button-wrapper {
+    display: flex;
+    margin-left: auto;
+    justify-content: space-between;
+    width: 500px;
 }

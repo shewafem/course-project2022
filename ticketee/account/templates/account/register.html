@@ -3,6 +3,16 @@
 {% block main %}
 <main class="page">
     <div class="page__container _container">
+        {% if user.is_authenticated %}
+        <section class="page__welcome welcome">
+            <div class="welcome__info">
+                <h1 class="welcome__heading">УПС!</h1>
+                <p class="welcome__text" style="text-align:center;">Вы уже зарегистрированы!</p>
+            </div>
+            <div class="welcome__button button"><a href="{% url 'home' %}" class="welcome__link">На главную</a></div>
+            <img class="welcome__image"src="{% static 'img/404.png' %}" alt="error_404">
+        </section>
+        {% else %}
         <section class="form-section">
             <form class="page__form form" action="{% url 'register' %}" method="post">
                 {% csrf_token %}
@@ -29,6 +39,7 @@
             </form>
             {% comment %}<img class="form__img" src="{% static 'tickets/img/signup.png' %}" alt="happy-signup">{% endcomment %}
         </section>
+        {%endif%}
     </div>
 </main>
 {% endblock %}

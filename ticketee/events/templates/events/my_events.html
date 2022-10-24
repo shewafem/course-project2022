@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block main %}
+    <main class="page">
+        <div class="page__container _container">
+            <section id="events" class="page__my-events my-events">
+                <h2 class="page__events-heading">Мои билеты</h2>
+                {% if order != None %}
+                    <div class="my-events__text-wrapper">
+                        <div>
+                            <p class="my-events__text">Всего билетов: <span class="my-events__accent">{{order.get_cart_items}}</span></p>
+                            <p class="my-events__text">Итог: <span class="my-events__accent">{{order.get_cart_total}} руб.</span></p>
+                        </div>
+                        <button class="event__button button event__button--pay">Оплатить💰</button>
+                    </div>
+                    {% for item in order.orderitem_set.all %}
+                        <div class="event">
+                            <img src="{{item.event.photoURL}}" alt="Событие" class="event__photo">
+                            <div class="event__info">
+                                <a href="{{item.event.get_absolute_url}}" class="event__link"><h3 class="event__heading">{{item.event.name}} — {{item.quantity}} шт.</h3></a>
+                                <a href="{{item.event.category.get_absolute_url}}" class="event__category">{{item.event.category}}</a>
+                                <p class="event__description">{{item.event.description|truncatewords:70}}</p>
+                                <div class="my-events__button-wrapper">
+                                    <div><a href="#" class="event__button button event__button--update">Обновить</a></div>
+                                    <div><a href="#" class="event__button button event__button--danger">Удалить</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="page__block">
+                        <h1 class="welcome__heading">Здесь будут ваши билеты...</h1>
+                    </div>
+                {% endif %}
+            </section>
+        </div>
+    </main>
+{%endblock%}
