@@ -1,6 +1,6 @@
 # Курсовая работа | Сундуреев Тамир 211-322
 ## Тема №13 - Продажа билетов на мероприятия
-[Ссылка на макет Figma](https://www.figma.com/file/CeB8aubfCnFKHZp6lLzWGO/coworking?node-id=24%3A167)
+[Ссылка на макет Figma](https://www.figma.com/file/ZLtLUVy3ozOTxf2FSLCnPD/ticketee?node-id=0%3A1)
 
 ## Задание
 
