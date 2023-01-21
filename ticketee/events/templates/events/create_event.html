@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block main %}
+<main class="page">
+    <div class="page__container _container">
+        <section class="form-section">
+            <form class="page__form form" action="{% url 'create-event' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>{{title}}</legend>
+                        {% for field in form %}
+                            <div>
+                                <span class="form__error">{{field.errors}}</span>
+                                {{field.label_tag}}
+                                {{field}}
+                            </div>
+                        {% endfor %}
+                        <button class="register-button button" type="submit">{{action}}</button>
+                </fieldset>
+            </form>
+            {% comment %}<img class="form__img" src="{% static 'tickets/img/laptop.png' %}" alt="happy-laptop">{% endcomment %}
+        </section>
+    </div>
+</main>
+{% endblock %}

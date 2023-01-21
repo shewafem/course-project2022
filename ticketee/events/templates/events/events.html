@@ -7,18 +7,39 @@
         <section id="events" class="page__events">
             <h2 class="page__events-heading">События</h2>
             {% get_cats as cats %}
-            <div class="categories">
-                <select title="categories" class="categories__select" id="">
-                    {% if cat_selected == "" %}
-                        <option>Все категории</option>
-                    {% else %}
-                        <option value="{% url 'events' %}">Все категории</option>
-                    {% endif %}
-                    {% show_cats %}
-                </select>
+            <div class="events__btns">
+                <a class="create__button button" href="{% url 'create-event' %}">Создать событие</a>
+                <div class="categories">
+                    <select title="categories" class="categories__select" id="">
+                        {% if cat_selected == "" %}
+                            <option>Все категории</option>
+                        {% else %}
+                            <option value="{% url 'events' %}">Все категории</option>
+                        {% endif %}
+                        {% show_cats %}
+                    </select>
+                </div>
             </div>
             {% show_events %}
         </section>
     </div>
 </main>
+<style>
+    .events__btns {
+        display: flex;
+        justify-content: space-between;
+    }
+    .create__button {
+        font-family: inherit;
+        font-size: 24px;
+        border-radius: 10px;
+        border: 2px solid #000000;
+        box-shadow: 5px 5px 0px #000000;
+        text-align: center;
+        font-weight: 500;
+        background: white;
+        margin-bottom: 20px;
+        padding: 13px 15px;
+    }
+</style>
 {%endblock%}

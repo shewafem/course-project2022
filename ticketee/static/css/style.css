@@ -453,8 +453,13 @@ footer {
     font-size: 24px;
     line-height: 31px;
     width: 240px;
+}
+
+.event__button:not(:first-child) {
     margin-left: auto;
 }
+
+
 
 .event__button--disabled {
     background: rgb(188, 182, 188);
@@ -623,7 +628,7 @@ footer {
     margin-left: auto;
 }
 
-.categories__select {
+select {
     width: 100%;
     font-family: inherit;
     font-size: 24px;
@@ -697,6 +702,19 @@ select option {
 
 .page__form input:focus {
     background: rgba(148, 90, 241, 0.2);
+}
+
+.page__form textarea {
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    /* shadow-mild */
+    box-shadow: 5px 5px 0px #000000;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: justify;
+    padding: 22px 37px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 .page__form div:not(:last-child) {
@@ -783,6 +801,15 @@ select option {
     background: rgb(255, 0, 0)
 }
 
+.event__button--update {
+    background: rgba(43, 68, 255, 0.433);
+}
+
+.event__button--update:hover {
+    background: rgb(43, 68, 255);
+}
+
+
 .event__button--pay {
     background: rgba(0, 255, 13, 0.58);
 }
@@ -794,5 +821,5 @@ select option {
     display: flex;
     margin-left: auto;
     justify-content: space-between;
-    width: 500px;
+    width: 100%;
 }

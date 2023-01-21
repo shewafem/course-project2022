@@ -41,7 +41,7 @@ class Event(models.Model):
     is_available = models.BooleanField('Доступность', default=True)
     quantity = models.IntegerField('Количество билетов')
     price = models.IntegerField('Цена')
-    photo = models.ImageField(upload_to="photos/events")
+    photo = models.ImageField('Фото', upload_to="photos/events")
 
     def __str__(self):
         return self.name

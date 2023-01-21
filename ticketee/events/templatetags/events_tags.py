@@ -1,6 +1,7 @@
 from django import template
 from django.http import Http404
 from events.models import *
+from django.core.paginator import Paginator
 
 register = template.Library()
 

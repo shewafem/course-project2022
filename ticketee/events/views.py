@@ -4,9 +4,9 @@ from django.utils import timezone
 from django.contrib import messages
 
 from .models import *
+from .forms import *
 
 # Create your views here.
-
 
 def event(request, event_slug, cat_slug):
     event = get_object_or_404(Event, slug=event_slug)
@@ -62,5 +62,32 @@ def add_to_my_events(request, event_slug):
     context = {'event': event, 'title': event.name}
     return render(request, 'events/event.html', context)
 
+def create_event(request):
+    if request.method == 'POST':
+        form = AddEventForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = AddEventForm()
+    context = {'form': form, 'title': 'Добавить новое событие', 'action': 'Добавить'}
+    return render(request, 'events/create_event.html', context)
+
+def update_event(request, pk):
+    event = Event.objects.get(pk = pk)
+    form = AddEventForm(instance = event)
+    
+    if request.method == 'POST':
+        form = AddEventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    context = {'form': form, 'title': 'Редактировать событие', 'action': 'Сохранить', 'event': event}
+    return render(request, 'events/update_event.html', context)
+
+def delete_event(request, pk):
+    event = Event.objects.get(pk = pk)
+    event.delete()
+    return redirect('events')
 #def remove_from_my_events(request, event_slug):
     
