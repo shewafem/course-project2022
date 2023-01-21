@@ -31,7 +31,7 @@ class Event(models.Model):
     name = models.CharField('Название', max_length=255)
     slug = models.SlugField(max_length=255, unique=True,
                             db_index=True, verbose_name="URL")
-    description = models.TextField('Описание')
+    description = models.TextField('Описание', help_text='Подробно опишите событие и расскажите про выступающих')
     date = models.DateField('Дата')
     time = models.TimeField('Время')
     performer = models.CharField('Выступающий', max_length=255)

@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'TTFirsNeue';
+    src: url('../fonts/TTFirsNeue-Regular.eot');
+    src: local('☺'), url('../fonts/TTFirsNeue-Regular.woff') format('woff'), url('../fonts/TTFirsNeue-Regular.ttf') format('truetype'), url('../fonts/TTFirsNeue-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTFirsNeue';
+    src: url('../fonts/TTFirsNeue-Medium.eot');
+    src: local('☺'), url('../fonts/TTFirsNeue-Medium.woff') format('woff'), url('../fonts/TTFirsNeue-Medium.ttf') format('truetype'), url('../fonts/TTFirsNeue-Medium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+:root {
+    --primary: #8844f6;
+    --button-bg: var(--primary);
+    --button-hover-bg: rgb(236, 196, 227);
+    --default-button-bg: var(--primary);
+    --default-button-hover-bg: rgb(236, 196, 227);
+}
+
+* {
+    font-family: 'TTFirsNeue'
+}
+
+#header {
+    background: #8844f6;
+}
+
+#branding h1 a:link, #branding h1 a:visited {
+    color: white;
+    font-weight: 500;
+}
+
+.module caption {
+    background-color: #8844f6;
+}
+
+input, textarea {
+    font-family: inherit;
+}
