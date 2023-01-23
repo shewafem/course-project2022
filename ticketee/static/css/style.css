@@ -170,8 +170,12 @@ header {
     flex-wrap: wrap;
 }
 
+.nav__item{
+    padding-top: 10px;
+}
+
 .nav__item:not(:last-child) {
-    margin-right: 85px;
+    margin-right: 40px;
 }
 
 .nav__link {
@@ -822,4 +826,8 @@ select option {
     margin-left: auto;
     justify-content: space-between;
     width: 100%;
+}
+
+.languages {
+    padding: 0;
 }

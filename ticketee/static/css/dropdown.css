@@ -1,0 +1,94 @@
+.lang-menu {
+    width: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
+.lang-menu .selected-lang {
+    display: flex;   
+    justify-content: space-between;
+    line-height: 2;
+    cursor: pointer;
+    padding-top: 3px;
+}
+
+.lang-menu .selected-lang .ru:before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/russia.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.lang-menu .selected-lang .en:before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/en.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.lang-menu ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #f8f8f8;
+    position: absolute;
+    top: 45px;
+    right: 0px;
+    width: 125px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+}
+
+
+.lang-menu ul li {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-menu ul li a {
+    text-decoration: none;
+    width: 125px;
+    padding: 5px 10px;
+    display: block;
+}
+
+.lang-menu ul li:hover {
+    background-color: #f2f2f2;
+}
+
+.lang-menu ul li a:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.ru:before {
+    background-image: url('../img/russia.png');
+}
+
+.en:before {
+    background-image: url('../img/en.png');
+}
+
+.lang-menu:hover ul {
+    display: block;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap:5px;
+}

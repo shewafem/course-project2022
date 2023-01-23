@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-24 00:07+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\events\templates\events\event.html:14
+msgid "Дата"
+msgstr "Date"
+
+#: .\events\templates\events\event.html:15
+msgid "Место"
+msgstr "Place"
+
+#: .\events\templates\events\event.html:16
+msgid "Время"
+msgstr "Time"
+
+#: .\events\templates\events\event.html:18
+msgid "Цена"
+msgstr "Price"
+
+#: .\events\templates\events\event.html:18
+msgid "руб"
+msgstr "rub"
+
+#: .\events\templates\events\event.html:25
+#: .\events\templates\events\events_list.html:13
+msgid "Купить билет"
+msgstr "Buy ticket"
+
+#: .\events\templates\events\events.html:9
+#: .\events\templates\events\events_by_category.html:9
+#: .\main\templates\main\layout.html:25
+msgid "События"
+msgstr "Events"
+
+#: .\events\templates\events\events.html:12
+msgid "Создать событие"
+msgstr "Create event"
+
+#: .\events\templates\events\events.html:16
+#: .\events\templates\events\events.html:18
+#: .\events\templates\events\events_by_category.html:14
+#: .\events\templates\events\events_by_category.html:16
+#, fuzzy
+#| msgid "Категории"
+msgid "Все категории"
+msgstr "Categories"
+
+#: .\events\templates\events\events_list.html:11
+#: .\events\templates\events\events_list.html:17
+msgid "Обновить"
+msgstr "Update"
+
+#: .\events\templates\events\events_list.html:12
+#: .\events\templates\events\events_list.html:18
+msgid "Удалить"
+msgstr "Delete"
+
+#: .\main\templates\main\home.html:9
+msgid "Билеты на лучшие события Москвы!"
+msgstr "Ticket to best events in Moscow!"
+
+#: .\main\templates\main\home.html:10
+msgid ""
+"Все ваши потребности в развлечениях под одной виртуальной крышей с билетами "
+"в театр, концерты, спорт, семейные мероприятия, клубы и многое другое. "
+"Быстрее бронируйте билет, пока это не сделал кто-то другой!"
+msgstr ""
+"All your entertainment needs are under one virtual roof with tickets to the "
+"theatre, concerts, sports, family events, clubs and much more. Book your "
+"ticket before someone else does it!"
+
+#: .\main\templates\main\home.html:12
+msgid "Купить билеты!"
+msgstr "Buy tickets!"
+
+#: .\main\templates\main\layout.html:26 .\main\templates\main\layout.html:71
+msgid "О нас"
+msgstr "About us"
+
+#: .\main\templates\main\layout.html:27
+msgid "Мои билеты"
+msgstr "My tickets"
+
+#: .\main\templates\main\layout.html:53
+msgid "Выйти"
+msgstr "Exit"
+
+#: .\main\templates\main\layout.html:55
+msgid "Войти"
+msgstr "Log in"
+
+#: .\main\templates\main\layout.html:69
+msgid "Страницы"
+msgstr "Pages"
+
+#: .\main\templates\main\layout.html:72
+msgid "Категории"
+msgstr "Categories"
+
+#: .\main\templates\main\layout.html:73
+msgid "Блог"
+msgstr "Blog"
+
+#: .\main\templates\main\layout.html:74
+msgid "Демо"
+msgstr "Demo"
+
+#: .\main\templates\main\layout.html:78
+msgid "Услуги"
+msgstr "Services"
+
+#: .\main\templates\main\layout.html:80
+msgid "Купить билеты"
+msgstr "Buy tickets"
+
+#: .\main\templates\main\layout.html:84
+msgid "Контакты"
+msgstr "Contacts"
+
+#: .\main\templates\main\layout.html:88
+msgid "Москва"
+msgstr "Moscow"
+
+#: .\main\templates\main\layout.html:92
+msgid "Социалки"
+msgstr "Socials"
+
+#: .\templates\admin\base_site.html:6
+msgid "Django site admin"
+msgstr ""
+
+#: .\templates\admin\base_site.html:9
+msgid "Django administration"
+msgstr ""
+
+#: .\ticketee\settings.py:148
+msgid "Russian"
+msgstr "Русский"
+
+#: .\ticketee\settings.py:149
+msgid "English"
+msgstr "English"

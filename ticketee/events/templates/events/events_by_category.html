@@ -1,18 +1,19 @@
 {% extends 'main/layout.html' %}
+{% load i18n %}
 {% load events_tags %}
 {% load static %}
 {% block main %}
 <main class="page">
     <div class="page__container _container">
         <section id="events" class="page__events">
-            <h2 class="page__events-heading">События</h2>
+            <h2 class="page__events-heading">{%trans 'События'%}</h2>
             {% get_cats as cats %}
             <div class="categories">
                 <select title="categories" class="categories__select" id="">
                     {% if cat_selected == "" %}
-                        <option>Все категории</option>
+                        <option>{% trans 'Все категории' %}</option>
                     {% else %}
-                        <option value="{% url 'events' %}">Все категории</option>
+                        <option value="{% url 'events' %}">{% trans 'Все категории' %}</option>
                     {% endif %}
                     {% for c in cats %}
                         {% if c.slug == cat_selected %}

@@ -1,3 +1,4 @@
+{% load i18n %}
 {% for event in events %}
     <div class="event">
         <img src="{{event.photoURL}}" alt="Событие" class="event__photo">
@@ -7,14 +8,14 @@
             <p class="event__description">{{event.description|truncatewords:70}}</p>
             {% if event.is_available  %}
                 <div class="my-events__button-wrapper">
-                    <a href="{% url 'update-event' event.pk %}" class="event__button button event__button--update">Обновить ♻️</a>
-                    <a href="{% url 'delete-event' event.pk %}" class="event__button button event__button--danger">Удалить 🗑️</a>
-                    <a href="{{event.get_absolute_url}}" class="event__button button">Купить билет 🏷️</a>
+                    <a href="{% url 'update-event' event.pk %}" class="event__button button event__button--update">{% trans 'Обновить' %} ♻️</a>
+                    <a href="{% url 'delete-event' event.pk %}" class="event__button button event__button--danger">{% trans 'Удалить' %} 🗑️</a>
+                    <a href="{{event.get_absolute_url}}" class="event__button button">{% trans 'Купить билет' %} 🏷️</a>
                 </div>
             {% else %}
             <div class="my-events__button-wrapper">
-                <a href="{% url 'update-event' event.id %}" class="event__button button event__button--update">Обновить ♻️</a>
-                <a href="#" class="event__button button event__button--danger">Удалить 🗑️</a>
+                <a href="{% url 'update-event' event.id %}" class="event__button button event__button--update">{% trans 'Обновить' %} ♻️</a>
+                <a href="#" class="event__button button event__button--danger">{% trans 'Удалить' %} 🗑️</a>
                 <a class="event__button event__button--disabled">SOLD OUT 😔</a>
             </div>
             {% endif %}
